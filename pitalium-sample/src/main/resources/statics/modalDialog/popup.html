@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+  ~ Copyright (C) 2015 NS Solutions Corporation
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modal Dialog サンプル</title>
+
+<link href="../hifive-res/fw/current/h5.css" rel="stylesheet">
+<link href="../hifive-res/ext/bootstrap/3.3.5/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="css/popup.css" rel="stylesheet">
+
+</head>
+
+<div class="container">
+
+	<form class="form">
+		<h2 class="form-header">ログイン情報を入力してください。</h2>
+		<label for="email" class="sr-only">Emailアドレス</label> <input
+			type="email" id="email" class="form-control" placeholder="Emailアドレス"
+			required autofocus> <label for="password" class="sr-only">パスワード</label>
+		<input type="password" id="password" class="form-control"
+			placeholder="パスワード" required>
+		<button id="login" class="btn btn-lg btn-primary btn-block"
+			type="submit">ログイン</button>
+	</form>
+
+</div>
+
+<script src="../hifive-res/ext/jquery/jquery-2.1.4.min.js"></script>
+<script src="../hifive-res/ext/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../hifive-res/fw/current/h5.js"></script>
+<script src="js/popup.js"></script>
+
+</html>
