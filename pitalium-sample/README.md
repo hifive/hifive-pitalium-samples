@@ -15,36 +15,25 @@ Pitaliumの動作確認用サンプルプロジェクトです。
   pitalium-sampleプロジェクトをインポート -> `pitalium-sample/ivy_build.xml` を右クリック -> 実行 -> Antビルド
 
 ## 環境構築
-
-1. Selenium Hubサーバの起動
-
+1. Selenium Hubサーバの起動  
 下記ページの「Hubサーバのインストール～起動」手順を参照し、Hubサーバを起動します。
-http://www.htmlhifive.com/conts/web/view/library/Selenium+Grid
-
-### PCブラウザでテストを実行する場合
-
-2. Selenium Gridサーバの起動
-
+http://www.htmlhifive.com/conts/web/view/library/Selenium+Grid  
+2. Nodeの起動  
+  1. PCブラウザでテストを実行する場合
+    * Selenium Gridサーバの起動  
 下記ページの「Nodeサーバのインストール～起動」手順を参照し、Nodeサーバを起動します。
 http://www.htmlhifive.com/conts/web/view/library/Selenium+Grid
-
-### Android端末でテストを実行する場合
-
-3. Appiumの起動
-
+  2. Android端末でテストを実行する場合  
+    * Appiumの起動  
 下記ページの手順を参照し、Appiumを起動します。
 http://www.htmlhifive.com/conts/web/view/library/Android%E7%AB%AF%E6%9C%AB%E4%B8%8A%E3%81%A7%E3%83%86%E3%82%B9%E3%83%88%E3%82%92%E8%A1%8C%E3%81%86%EF%BC%88%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%EF%BC%89
-
-### iOS端末でテストを実行する場合
-
-4. Appiumの起動
-
+  3. iOS端末でテストを実行する場合
+    * Appiumの起動  
 下記ページの手順を参照し、Appiumを起動します。
-
 http://www.htmlhifive.com/conts/web/view/library/iOS%E7%AB%AF%E6%9C%AB%E4%B8%8A%E3%81%A7%E3%83%86%E3%82%B9%E3%83%88%E3%82%92%E8%A1%8C%E3%81%86%EF%BC%88%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%EF%BC%89
 
 ## 実行環境設定
-1. Capabilityを設定します。
+Capabilityを設定します。
 
 src/main/resources/capabilities.jsonを開き、テストを実行するブラウザの設定のみを残して
 不要な設定を削除します。
@@ -63,17 +52,13 @@ src/main/resources/capabilities.jsonを開き、テストを実行するブラ�
 
 ## 正解定義モードで実行
 1. PtlSampleTest.javaを実行します。
-
 2. pitalium-sample/results フォルダ以下に実行結果画像が生成されます。
 
 ## テスト実行モードで実行
-1. 実行モードを切り替えます。
-
+1. 実行モードを切り替えます。  
 src/main/resources/environmentConfig.jsonを開き、2行目を次のように書き換えます。
   "execMode": "RUN_TEST",
-
 2. PtlSampleTest.javaを実行します。
-
 3. pitalium-sample/results フォルダ以下に実行結果画像が生成されます。
 
 正解定義モードで実行した際の結果画像と、今回の実行結果画像を比較し、差異があった場合は差分画像が出力されます。
