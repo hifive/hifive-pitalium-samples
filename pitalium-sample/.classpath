@@ -30,5 +30,7 @@
 	<classpathentry kind="lib" path="libs/selenium-support-2.53.0.jar"/>
 	<classpathentry kind="lib" path="libs/slf4j-api-1.7.21.jar"/>
 	<classpathentry kind="lib" path="libs/pitalium-1.1.1.jar" sourcepath="libs/sources/pitalium-1.1.1-sources.jar"/>
+	<classpathentry kind="lib" path="libs/fontbox-2.0.2.jar"/>
+	<classpathentry kind="lib" path="libs/pdfbox-2.0.2.jar"/>
 	<classpathentry kind="output" path="target"/>
 </classpath>

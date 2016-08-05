@@ -6,3 +6,4 @@ libs/sources/*
 !libs/sources/pitalium-*.jar
 target/
 logs/
+/exports/
