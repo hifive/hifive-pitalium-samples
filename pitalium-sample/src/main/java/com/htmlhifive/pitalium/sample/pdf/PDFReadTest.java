@@ -92,10 +92,10 @@ public class PDFReadTest {
 	 * @return 保存した画像の枚数（PDFのページ数）
 	 */
 	private int savePdfAsImages(String fileName) {
-		BufferedInputStream fileToParse = new BufferedInputStream(getClass().getResourceAsStream(fileName + ".pdf"));
 		int numberOfPages = 0;
 
-		try (PDDocument pdf = PDDocument.load(fileToParse)) {
+		try (BufferedInputStream fileToParse = new BufferedInputStream(getClass().getResourceAsStream(fileName + ".pdf"));
+			 PDDocument pdf = PDDocument.load(fileToParse)) {
 			// 1ページ=1画像として全ページを保存
 			final PDFRenderer pdfRenderer = new PDFRenderer(pdf);
 			numberOfPages = pdf.getNumberOfPages();
@@ -109,6 +109,7 @@ public class PDFReadTest {
 		} catch (IOException e) {
 			return -1;
 		}
+
 		return numberOfPages;
 	}
 
