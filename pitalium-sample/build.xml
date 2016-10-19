@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="pitalium-sample" default="all">
+    <property name="junit.output.dir" value="junit"/>
+    <property name="lib" value="libs"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+
+	<path id="classpath">
+        <fileset dir="${lib}" includes="**/*.jar"/>
+        <pathelement location="target"/>
+	</path>
+	
+    <target name="prepare" depends="clean">
+        <mkdir dir="target"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="target"/>
+    </target>
+
+    <target depends="prepare" name="compile">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target" includeantruntime="false" source="${source}" target="${target}" encoding="UTF-8">
+            <src path="src/main/java"/>
+            <src path="src/main/resources"/>
+            <classpath refid="classpath"/>
+        </javac>
+        <copy includeemptydirs="false" todir="target">
+            <fileset dir="src/main/resources" />
+        </copy>
+    </target>
+
+	<target name="all" depends="test" />
+
+    <target name="test_prepare" depends="compile">
+        <mkdir dir="${junit.output.dir}"/>
+    </target>
+
+	<target name="test_with_mode" depends="test_prepare" if="testMode">
+        <junit fork="yes" printsummary="withOutAndErr">
+        	<jvmarg value="-Dcom.htmlhifive.pitalium.execMode=${testMode}"/>
+            <formatter type="xml"/>
+            <test name="${testClass}" todir="${junit.output.dir}"/>
+            <classpath refid="classpath"/>
+        </junit>
+    </target>
+
+    <target name="test" depends="test_with_mode" unless="testMode">
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="${testClass}" todir="${junit.output.dir}"/>
+            <classpath refid="classpath"/>
+        </junit>
+    </target>
+	
+	<target name="batch_test" depends="test_prepare">
+	    <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+	    	<batchtest >
+	    		  <fileset dir="${testFolder}"></fileset>
+	    	</batchtest>
+            <classpath refid="classpath"/>
+	    
+	    </junit>    
+	</target>
+
+    <target name="junit_report">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+
+     <import file="build_book.xml"/>
+
+</project>

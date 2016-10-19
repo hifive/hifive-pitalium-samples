@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+    <target name="ReportSeleniumTest">
+        <property name="testClass" value="ReportSeleniumTest"></property>
+        <antcall target="test"></antcall>
+    </target>
+
+    <target name="ReportPitaliumTest">
+        <property name="testClass" value="ReportPitaliumTest"></property>
+        <antcall target="test"></antcall>
+    </target>
+</project>
