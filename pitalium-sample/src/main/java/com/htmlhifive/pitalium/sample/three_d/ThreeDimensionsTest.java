@@ -40,7 +40,7 @@ public class ThreeDimensionsTest extends PtlTestBase {
 	@Test
 	public void カメラの位置を変更() throws Exception {
 		// ページの読み込み
-		driver.get("");
+		driver.get("three_d");
 
 		// 初期状態を撮影（レンダリングを待機指定から撮影）
 		driver.executeAsyncJavaScript(loadJS("waitRendering.js"), 0);
