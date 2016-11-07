@@ -29,10 +29,11 @@
 <script src="/hifive-res/ext/jquery/jquery-3.1.1.min.js"></script>
 <script src="/hifive-res/fw/current/h5.js"></script>
 <script src="/hifive-res/ext/threejs/r79/three.min.js"></script>
+<script src="libs/OrbitControls.js"></script>
 <script src="js/SampleController.js"></script>
 <script>
   $(function () {
-    h5.core.controller('#container', sample.SampleController);
+    h5.core.controller(document.body, sample.SampleController);
   });
 </script>
 

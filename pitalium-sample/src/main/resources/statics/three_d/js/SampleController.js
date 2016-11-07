@@ -43,13 +43,8 @@
      */
     _renderer: null,
 
-    /**
-     * @type {THREE.Mesh}
-     */
-    _object: null,
-
     __ready: function () {
-      this._$root = $(this.rootElement);
+      this._$root = this.$find('#container');
 
       // 初期化
       this._initialize();
@@ -72,6 +67,10 @@
       camera.position.set(300, 200, 200);
       camera.lookAt(new THREE.Vector3());
 
+      // カメラコントロールセットアップ
+      new THREE.OrbitControls(camera, this._$root[0]);
+
+      // WebGLのレンダラセットアップ
       var renderer = this._renderer = new THREE.WebGLRenderer({
         antialias: true
       });
@@ -98,7 +97,7 @@
       scene.add(floor);
 
       // オブジェクトを追加
-      var object = this._object = new THREE.Mesh(
+      var object = new THREE.Mesh(
         new THREE.BoxGeometry(50, 50, 50),
         new THREE.MeshPhongMaterial({
           color: 0x00ff00,
@@ -117,34 +116,8 @@
     _render: function () {
       requestAnimationFrame(this.own(this._render));
 
-      // レンダリング直前のイベント発火
-      this.trigger('preRender');
-
       // レンダリング
       this._renderer.render(this._scene, this._camera);
-
-      // レンダリング直後のイベント発火
-      this.trigger('postRender');
-    },
-
-    /**
-     * 表示しているオブジェクトの色を変更する。
-     *
-     * @param {Number} color 色
-     */
-    changeObjectColor: function (color) {
-      this._object.material.color.set(color);
-    },
-
-    /**
-     * カメラの視点と注目点を変更する。
-     *
-     * @param {THREE.Vector3} position 変更後の視点の座標
-     * @param {THREE.Vector3} lookAt 変更後の注目点の座標
-     */
-    changeCameraPosition: function (position, lookAt) {
-      this._camera.position.copy(position);
-      this._camera.lookAt(lookAt);
     }
   };
 

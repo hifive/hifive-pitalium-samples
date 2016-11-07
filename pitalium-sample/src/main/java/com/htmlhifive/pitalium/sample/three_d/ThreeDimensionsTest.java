@@ -22,6 +22,7 @@ import java.nio.charset.StandardCharsets;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
+import org.openqa.selenium.interactions.Actions;
 
 import com.htmlhifive.pitalium.core.PtlTestBase;
 
@@ -37,26 +38,30 @@ public class ThreeDimensionsTest extends PtlTestBase {
 	}
 
 	@Test
-	public void オブジェクトの色を変更() throws Exception {
-		// ページの読み込み
-		driver.get("three_d");
-
-		// テストスクリプトを実行
-		driver.executeAsyncJavaScript(loadJS("オブジェクトの色を変更.js"));
-
-		// スクリーンショットの撮影
-		assertionView.assertView("1_変更後");
-	}
-
-	@Test
 	public void カメラの位置を変更() throws Exception {
 		// ページの読み込み
-		driver.get("three_d");
+		driver.get("");
 
-		// テストスクリプトを実行
-		driver.executeAsyncJavaScript(loadJS("カメラの位置を変更.js"));
+		// 初期状態を撮影（レンダリングを待機指定から撮影）
+		driver.executeAsyncJavaScript(loadJS("waitRendering.js"), 0);
+		assertionView.assertView("0_初期状態");
 
-		// スクリーンショットの撮影
+		// マウスで画面を掴んだままを左から右へ移動
+		int width = (int) driver.getWindowWidth();
+		int height = (int) driver.getWindowHeight();
+
+//@formatter:off
+		new Actions(driver)
+				.moveToElement(driver.findElementByTagName("body"), width / 10, height / 2)
+				.clickAndHold()
+				.moveByOffset(width * 9 / 10, 0)
+				.release()
+				.build()
+				.perform();
+//@formatter:on
+
+		// マウス移動を待機するため、1秒経った次のWebGLレンダリングの後に撮影
+		driver.executeAsyncJavaScript(loadJS("waitRendering.js"), 1000);
 		assertionView.assertView("1_変更後");
 	}
 
