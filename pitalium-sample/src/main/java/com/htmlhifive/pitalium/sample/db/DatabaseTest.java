@@ -77,7 +77,7 @@ public class DatabaseTest extends PtlTestBase {
 	public void deleteUser() throws Exception {
 		// アクセス先のURLをCapabilitiesから取得する
 		String baseUrl = (String) capabilities.getCapability("pitalium.baseUrl");
-		driver.get(baseUrl + "user/");
+		driver.get(baseUrl + "db/user/");
 
 		// 初期表示スクリーンショットの撮影
 		assertionView.assertView("0.init");
@@ -117,5 +117,4 @@ public class DatabaseTest extends PtlTestBase {
 			Assertion.assertEquals(expectedSet, actualSet);
 		}
 	}
-
 }
