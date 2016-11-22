@@ -6,12 +6,17 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="libs/cglib-nodep-2.1_3.jar"/>
 	<classpathentry kind="lib" path="libs/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="libs/commons-collections-3.2.2.jar"/>
 	<classpathentry kind="lib" path="libs/commons-exec-1.3.jar"/>
 	<classpathentry kind="lib" path="libs/commons-io-2.4.jar"/>
 	<classpathentry kind="lib" path="libs/commons-lang3-3.4.jar"/>
 	<classpathentry kind="lib" path="libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="libs/curvesapi-1.03.jar"/>
+	<classpathentry kind="lib" path="libs/dbunit-2.5.3.jar"/>
+	<classpathentry kind="lib" path="libs/fontbox-2.0.2.jar"/>
 	<classpathentry kind="lib" path="libs/gson-2.3.1.jar"/>
 	<classpathentry kind="lib" path="libs/guava-19.0.jar"/>
+	<classpathentry kind="lib" path="libs/h2-1.4.193.jar"/>
 	<classpathentry kind="lib" path="libs/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="lib" path="libs/httpclient-4.5.1.jar"/>
 	<classpathentry kind="lib" path="libs/httpcore-4.4.3.jar"/>
@@ -24,13 +29,17 @@
 	<classpathentry kind="lib" path="libs/log4j-core-2.5.jar"/>
 	<classpathentry kind="lib" path="libs/log4j-slf4j-impl-2.5.jar"/>
 	<classpathentry kind="lib" path="libs/netty-3.5.7.Final.jar"/>
+	<classpathentry kind="lib" path="libs/pdfbox-2.0.2.jar"/>
+	<classpathentry kind="lib" path="libs/pitalium-dev.jar" sourcepath="libs/sources/pitalium-dev-sources.jar"/>
+	<classpathentry kind="lib" path="libs/poi-3.14.jar"/>
+	<classpathentry kind="lib" path="libs/poi-ooxml-3.14.jar"/>
+	<classpathentry kind="lib" path="libs/poi-ooxml-schemas-3.14.jar"/>
 	<classpathentry kind="lib" path="libs/selenium-api-2.53.0.jar"/>
 	<classpathentry kind="lib" path="libs/selenium-java-2.53.0.jar"/>
 	<classpathentry kind="lib" path="libs/selenium-remote-driver-2.53.0.jar"/>
 	<classpathentry kind="lib" path="libs/selenium-support-2.53.0.jar"/>
 	<classpathentry kind="lib" path="libs/slf4j-api-1.7.21.jar"/>
-	<classpathentry kind="lib" path="libs/pitalium-dev.jar" sourcepath="libs/sources/pitalium-dev-sources.jar"/>
-	<classpathentry kind="lib" path="libs/fontbox-2.0.2.jar"/>
-	<classpathentry kind="lib" path="libs/pdfbox-2.0.2.jar"/>
+	<classpathentry kind="lib" path="libs/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="libs/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="output" path="target"/>
 </classpath>

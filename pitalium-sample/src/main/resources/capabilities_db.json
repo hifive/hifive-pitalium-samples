@@ -1,0 +1,14 @@
+[
+  {
+    "platform": "WINDOWS",
+    "browserName": "internet explorer",
+    "pitalium.db.connectionString": "jdbc:h2:tcp://localhost/~/test_0;user=sa;password=",
+    "pitalium.baseUrl": "http://localhost:18080/"
+  },
+  {
+    "platform": "WINDOWS",
+    "browserName": "chrome",
+    "pitalium.db.connectionString": "jdbc:h2:tcp://localhost/~/test_1;user=sa;password=",
+    "pitalium.baseUrl": "http://localhost:18081/"
+  }
+]

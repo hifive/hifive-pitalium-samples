@@ -21,6 +21,10 @@
 		<!-- com.htmlhifive.pitalium.sample.pdfサンプルに利用 -->
 		<dependency org="org.apache.pdfbox" name="pdfbox" rev="2.0.2" conf="default"/>
 
+		<!-- com.htmlhifive.pitalium.sample.dbサンプルに利用 -->
+		<dependency org="org.dbunit" name="dbunit" rev="2.5.3" conf="default"/>
+		<dependency org="com.h2database" name="h2" rev="1.4.193" conf="default"/>
+
 		<!-- ソースが必要な場合は下記のコメントを外してください。 -->
 		<!--
 		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.21" conf="sources" />
