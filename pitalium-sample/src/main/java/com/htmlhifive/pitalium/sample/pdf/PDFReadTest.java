@@ -32,6 +32,7 @@ import org.junit.Test;
 import com.htmlhifive.pitalium.core.config.ExecMode;
 import com.htmlhifive.pitalium.core.config.PtlTestConfig;
 import com.htmlhifive.pitalium.image.model.DiffPoints;
+import com.htmlhifive.pitalium.image.model.ImageComparedResult;
 import com.htmlhifive.pitalium.image.util.ImageUtils;
 
 /**
@@ -71,10 +72,11 @@ public class PDFReadTest {
 				Assert.fail("画像が見つかりません。");
 			}
 
-			DiffPoints diffPoints = ImageUtils.compare(leftImage, null, rightImage, null, null);
+			ImageComparedResult result = ImageUtils.compare(leftImage, null, rightImage, null, null);
 
 			// 差分があれば差分画像を出力
-			if (diffPoints.isFailed()) {
+			if (result.isFailed()) {
+				DiffPoints diffPoints = (DiffPoints) result;
 				final BufferedImage diffImage = ImageUtils.getDiffImage(leftImage, rightImage, diffPoints);
 				saveExportImage(diffImage, "diffImage.png");
 				Assert.fail("PDFが一致しません。");
@@ -94,8 +96,8 @@ public class PDFReadTest {
 	private int savePdfAsImages(String fileName) {
 		int numberOfPages = 0;
 
-		try (BufferedInputStream fileToParse = new BufferedInputStream(getClass().getResourceAsStream(fileName + ".pdf"));
-			 PDDocument pdf = PDDocument.load(fileToParse)) {
+		try (BufferedInputStream fileToParse = new BufferedInputStream(getClass()
+				.getResourceAsStream(fileName + ".pdf")); PDDocument pdf = PDDocument.load(fileToParse)) {
 			// 1ページ=1画像として全ページを保存
 			final PDFRenderer pdfRenderer = new PDFRenderer(pdf);
 			numberOfPages = pdf.getNumberOfPages();
